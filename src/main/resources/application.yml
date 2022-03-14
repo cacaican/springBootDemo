@@ -1,0 +1,29 @@
+server:
+    port: 8090
+    servlet:
+        context-path: /demo
+
+#集成hibernate
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        new_generator_mappings: false
+        format_sql: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC&useSSL=false&autoReconnect=true&tinyInt1isBit=false&useUnicode=true&characterEncoding=utf8
+    username: testUser
+    password: Tu123456
+#分布式事务+redis缓存配置
+  session:
+    #告诉spring开启redis方式的session存储 或者在启动类上加@EnableRedisHttpSession
+    store-type: redis
+    timeout: 3600s
+    redis:
+      flush-mode: on_save
+      namespace: spring:session
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    timeout: 5000ms
