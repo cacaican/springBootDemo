@@ -1,12 +1,22 @@
 package com.xiaocai.springboot.integration.redis.config;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.core.task.TaskExecutor;
+import org.springframework.data.redis.connection.RedisClusterConfiguration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
+import org.springframework.data.redis.connection.RedisSentinelConfiguration;
+import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.listener.RedisMessageListenerContainer;
+import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
+import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
+import redis.clients.jedis.JedisPoolConfig;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -17,8 +27,10 @@ import java.util.Set;
  * @author: xiaocai
  * @time: 2022/3/14 16:57
  */
+
 public class RedisConfig {
 
+    /*读取配置文件，获取redis配置的连接参数*/
     @Value("${redis.corePoolSize}")
     private Integer corePoolSize;
     @Value("${redis.maxPoolSize}")
@@ -27,9 +39,7 @@ public class RedisConfig {
     private Integer keepAliveSeconds;
     @Value("${redis.queueCapacity}")
     private Integer queueCapacity;
-    @Autowired
-    @Qualifier("stringRedisSerializer")
-    private RedisSerializer stringRedisSerializer;
+
     @Value("${redis.mode}")
     private String mode;
     @Value("${redis.clusterNodes}")
@@ -59,6 +69,15 @@ public class RedisConfig {
     @Value("${redis.testOnBorrow:true}")
     private boolean testOnBorrow;
 
+
+    @Autowired
+    @Qualifier("stringRedisSerializer")
+    private RedisSerializer stringRedisSerializer;
+    @Autowired
+    @Qualifier("genericJackson2JsonRedisSerializer")
+    private GenericJackson2JsonRedisSerializer genericJackson2JsonRedisSerializer;
+
+    //自定义连接工厂
     @Bean
     public RedisConnectionFactory jedisConnectionFactory() {
         JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
@@ -111,6 +130,7 @@ public class RedisConfig {
         return connectionFactory;
     }
 
+    //自定义线程池
     @Bean
     public TaskExecutor redisCacheMessageTaskExecutor() {
         ThreadPoolTaskExecutor messageTaskExecutor = new ThreadPoolTaskExecutor();
@@ -121,6 +141,10 @@ public class RedisConfig {
         return messageTaskExecutor;
     }
 
+    //自定义监听器容器
+    /*上面介绍了Spring默认的线程池simpleAsyncTaskExecutor，但是Spring更加推荐我们开发者使用ThreadPoolTaskExecutor类来创建线程池，其本质是对java.util.concurrent.ThreadPoolExecutor的包装。
+    这个类则是spring包下的，是Spring为我们开发者提供的线程池类，这里重点讲解这个类的用法。
+    Spring提供了xml给我们配置ThreadPoolTaskExecutor线程池，但是现在普遍都在用SpringBoot开发项目，所以直接上yaml或者properties配置即可，或者也可以使用@Configuration配置也行，下面演示配置和使用。*/
     @Bean
     public RedisMessageListenerContainer redisCacheMessageContainer() {
         RedisMessageListenerContainer container = new RedisMessageListenerContainer();
@@ -128,5 +152,26 @@ public class RedisConfig {
         container.setTaskExecutor(this.redisCacheMessageTaskExecutor());
         container.setTopicSerializer(this.stringRedisSerializer);
         return container;
+    }
+
+    public static enum RedisMode {
+        standalone,
+        sentinel,
+        cluster;
+
+        private RedisMode() {
+        }
+    }
+
+    @Bean
+    public RedisTemplate getRedisTemplate(){
+        RedisTemplate<Object, Object> redisTemplate = new RedisTemplate<>();
+        redisTemplate.setConnectionFactory(this.jedisConnectionFactory());
+        redisTemplate.setEnableTransactionSupport(false);
+        redisTemplate.setKeySerializer(stringRedisSerializer);
+        redisTemplate.setValueSerializer(genericJackson2JsonRedisSerializer);
+
+        return redisTemplate;
+
     }
 }

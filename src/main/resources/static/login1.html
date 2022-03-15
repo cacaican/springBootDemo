@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+这是static\login，Spring Boot 项目在启动后，
+Spring Boot 项目在启动后，首先回去静态资源路径（resources/static）下查找 index.html 作为首页文件。
+如果在静态资源路径（resources/static）下找不到 index.html，则会到 resources/templates 目录下找 index.html（使用 Thymeleaf 模版）作为首页文件。
+
+但是我自定义controller使得请求/地址时，重定向到login.html
+
+
+还有一个办法就是重定义mvc
+另一种方式是通过自定义一个 MVC 配置，并重写 addViewControllers 方法进行映射关系配置即可。
+
+@Configuration
+public class WebMvcConfig implements WebMvcConfigurer {
+@Override
+public void addViewControllers(ViewControllerRegistry registry) {
+registry.addViewController("/").setViewName("login");
+}
+}
+
+</body>
+</html>

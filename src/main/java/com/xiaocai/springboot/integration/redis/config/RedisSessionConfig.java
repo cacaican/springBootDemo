@@ -46,10 +46,10 @@ public class RedisSessionConfig implements AsyncConfigurer {
     private int maxWaitMillis;
     @Value("${redis.session.testOnBorrow:true}")
     private boolean testOnBorrow;
-    @Value("${unic.defaultExecutor.pool-size}")
-    private String poolSize;
-    @Value("${unic.defaultExecutor.queue-capacity}")
-    private Integer queueCapacity;
+//    @Value("${unic.defaultExecutor.pool-size}")
+//    private String poolSize;
+//    @Value("${unic.defaultExecutor.queue-capacity}")
+//    private Integer queueCapacity;
 
 
 }

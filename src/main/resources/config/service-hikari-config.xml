@@ -46,5 +46,6 @@
         <property name="maximumPoolSize"
                   value="${spring.datasource.hikari.maximum-pool-size}"/>
     </bean>-->
-
+    <bean id="stringRedisSerializerBase"
+          class="org.springframework.data.redis.serializer.StringRedisSerializer" />
 </beans>
