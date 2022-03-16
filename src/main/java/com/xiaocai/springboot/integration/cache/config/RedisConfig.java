@@ -1,10 +1,11 @@
-package com.xiaocai.springboot.integration.redis.config;
+package com.xiaocai.springboot.integration.cache.config;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.task.TaskExecutor;
 import org.springframework.data.redis.connection.RedisClusterConfiguration;
@@ -15,6 +16,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.RedisSerializer;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import redis.clients.jedis.JedisPoolConfig;
 
@@ -27,7 +29,12 @@ import java.util.Set;
  * @author: xiaocai
  * @time: 2022/3/14 16:57
  */
-
+@Configuration
+@ComponentScan
+@EnableAsync
+/*@EnableElasticsearchRepositories(
+        basePackages = {"com.chinalife.base"}
+)*/
 public class RedisConfig {
 
     /*读取配置文件，获取redis配置的连接参数*/
@@ -163,13 +170,17 @@ public class RedisConfig {
         }
     }
 
-    @Bean
-    public RedisTemplate getRedisTemplate(){
-        RedisTemplate<Object, Object> redisTemplate = new RedisTemplate<>();
+    @Bean(name = "myRedisTemplate")
+    public RedisTemplate<String,Object>  getRedisTemplate(){
+        RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
         redisTemplate.setConnectionFactory(this.jedisConnectionFactory());
         redisTemplate.setEnableTransactionSupport(false);
         redisTemplate.setKeySerializer(stringRedisSerializer);
         redisTemplate.setValueSerializer(genericJackson2JsonRedisSerializer);
+        redisTemplate.setHashKeySerializer(stringRedisSerializer);
+        redisTemplate.setHashValueSerializer(genericJackson2JsonRedisSerializer);
+
+//        redisTemplate.setValueSerializer(genericJackson2JsonRedisSerializer);
 
         return redisTemplate;
 

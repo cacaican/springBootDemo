@@ -1,4 +1,4 @@
-package com.xiaocai.springboot.integration.redis.config;
+package com.xiaocai.springboot.integration.cache.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

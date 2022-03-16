@@ -33,13 +33,18 @@ spring:
 # 自定义reids配置------------------------------------------------
 redis:
   mode: standalone
-  host: localhost
+  host: 127.0.0.1
   port: 6379
   password:
   usePool: true
   database: 4
-  maxTotal: 1500
-  maxIdle: 1000
+  maxTotal: 50
+  maxIdle: 10
+  minIdle: 20
+  keepAliveSeconds: 1000
+  queueCapacity: 120
+  maxPoolSize: 5
+  corePoolSize: 2
   maxWaitMillis: 3000
   testOnBorrow: true
   maxInactiveIntervalInSeconds: 1800
@@ -54,8 +59,8 @@ redis:
     password:
     usePool: true
     database: 4
-    maxTotal: 1500
-    maxIdle: 1000
+    maxTotal: 20
+    maxIdle: 10
     maxWaitMillis: 3000
     testOnBorrow: true
     maxInactiveIntervalInSeconds: 1800
@@ -64,5 +69,5 @@ redis:
     master:
     sentinelHostAndPorts:
 
-# 默认reis配置------------------------------------------------
+# 自定义reids配置------------------------------------------------
 

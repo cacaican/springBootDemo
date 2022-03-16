@@ -1,4 +1,4 @@
-package com.xiaocai.springboot.integration.redis.config;
+package com.xiaocai.springboot.integration.cache.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.AutoConfigureOrder;

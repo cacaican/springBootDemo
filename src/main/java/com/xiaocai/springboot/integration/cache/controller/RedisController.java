@@ -1,4 +1,4 @@
-package com.xiaocai.springboot.integration.redis.controller;
+package com.xiaocai.springboot.integration.cache.controller;
 
 /**
  * @description:
@@ -6,4 +6,5 @@ package com.xiaocai.springboot.integration.redis.controller;
  * @time: 2022/3/15 16:48
  */
 public interface RedisController extends ICacheController{
+
 }

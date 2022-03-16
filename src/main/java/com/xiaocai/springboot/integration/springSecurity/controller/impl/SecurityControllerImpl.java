@@ -44,6 +44,11 @@ public class SecurityControllerImpl implements SecurityController {
         return "login";
     }
 
+    @Override
+    public String index() {
+        return "index";
+    }
+
     @GetMapping(value = "/person")
     public String personPage(){
         return "person";

@@ -21,4 +21,8 @@ public interface SecurityController {
 
     @GetMapping(value = "/user/login")
     String loginPage();
+
+    @GetMapping("/index")
+    @ResponseBody
+    String index();
 }

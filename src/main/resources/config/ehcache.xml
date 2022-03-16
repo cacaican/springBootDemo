@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache >
+
+<diskStore path="java.io.tmpdir" /><!-- userCache缓存 --><cache name="userCache" maxElementsInMemory="1000" eternal="false"
+           timeToIdleSeconds="120" timeToLiveSeconds="120" overflowToDisk="true"
+           diskSpoolBufferSizeMB="30" maxElementsOnDisk="10000000"
+           diskPersistent="false" diskExpiryThreadIntervalSeconds="120"
+           memoryStoreEvictionPolicy="LRU">
+    </cache>
+</ehcache>
+
+<!--
+<diskStore path="java.io.tmpdir" />  指定数据(.data and .index)存储位置，可指定磁盘中的文件夹位置期
+ <cache name="userCache"  Cache的名称，必须是唯一的(ehcache会把这个cache放到HashMap里)。
+    maxElementsInMemory="1000"  在内存中缓存的element的最大数目
+    eternal="false"  设定缓存的elements是否永远不过期。如果为true，则缓存的数据始终有效，如果为false那么还要根据timeToIdleSeconds，timeToLiveSeconds判断。
+    timeToIdleSeconds="120" timeToLiveSeconds="120"     overflowToDisk="true" 如果内存中数据超过内存限制，是否要缓存到磁盘上。
+    diskSpoolBufferSizeMB="30" maxElementsOnDisk="10000000"
+           diskPersistent="false"  否在磁盘上持久化。指重启jvm后，数据是否有效。默认为false。    diskExpiryThreadIntervalSeconds="120" 对象检测线程运行时间间隔。标识对象状态的线程多长时间运行一次。
+           memoryStoreEvictionPolicy="LRU"> 缓存策略。默认值LRU，可选FIFO、LFU。
+-->
