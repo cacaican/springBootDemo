@@ -116,6 +116,12 @@
             <artifactId>cache-api</artifactId>
         </dependency>
 
+        <!-- rabbit-mq start -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+        <!-- rabbit-mq end -->
 
 
         <dependency>

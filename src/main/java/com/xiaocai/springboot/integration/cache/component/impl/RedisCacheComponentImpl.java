@@ -93,7 +93,7 @@ public class RedisCacheComponentImpl implements RedisCacheComponent {
 //        }
 //        return set;
 
-        ScanOptions scanOptions = ScanOptions.scanOptions().count(10L).match("*"+cacheName + "*").build();
+        ScanOptions scanOptions = ScanOptions.scanOptions().count(6000).match("*"+cacheName + "*").build();
         Cursor<byte[]> cursors = connection.scan(scanOptions);
         cursors.forEachRemaining(c ->
                 result.put(new String(c, Charset.forName("UTF-8")),redisTemplate.boundValueOps(new String(c, Charset.forName("UTF-8"))).get())
@@ -106,6 +106,7 @@ public class RedisCacheComponentImpl implements RedisCacheComponent {
 //
 //            }
 //        });
+        connection.close();
         return  result;
     }
 

@@ -15,6 +15,37 @@ spring:
     url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC&useSSL=false&autoReconnect=true&tinyInt1isBit=false&useUnicode=true&characterEncoding=utf8
     username: testUser
     password: Tu123456
+
+#springboot默认mq配置 start -----------------------
+
+#  虚拟主机host：RabbitMQ支持权限控制，但是最小控制粒度为虚拟主机。一个虚拟主机可以包含多个交换机、队列、绑定。
+#  交换机Exchange：RabbitMQ分发器，根据不同的策略将消息分发到相关的队列。
+#  队列queue：缓存消息的容器。
+#  绑定：设置交换机与队列的关系。
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+    listener:
+      simple:
+        acknowledge-mode: manual # 手动应答
+        concurrency: 5 # 消费端最小并发数
+        max-concurrency: 10 # 消费端最大并发数
+        prefetch: 5 # 一次请求中预处理的消息数量
+    cache:
+      channel:
+        size: 50 # 缓存的channel数量
+#springboot默认mq配置 start -----------------------
+
+### 自定义配置 ---------------
+mq:
+  defaultExchange: amqpExchange # 默认交换器
+  queue: queue # 队列名
+  routeKey: queue_key # 路由key
+### 自定义配置 ---------------
+
 # 默认reis配置------------------------------------------------
 #  分布式事务+redis缓存配置
 #  session:
@@ -70,4 +101,5 @@ redis:
     sentinelHostAndPorts:
 
 # 自定义reids配置------------------------------------------------
+
 

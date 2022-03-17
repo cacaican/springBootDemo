@@ -13,8 +13,8 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 //@ComponentScan("com.xiaocai.springboot.integration")
 @ComponentScan("com.xiaocai.springboot.integration.cache")
 @ComponentScan("com.xiaocai.springboot.integration.hibernate")
-
-@EntityScan(basePackages = "com.xiaocai.springboot.integration")
+@ComponentScan("com.xiaocai.springboot.integration.rabbitmq")
+@EntityScan(basePackages = "com.xiaocai.springboot.integration")//设置hiernate的entity扫包路径，找包中@entity和@table的class
 //数据库连接信息
 @ImportResource(
         /*数据库连接信息，可以使用* 做通配符*/
