@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @description:
+ * @description: 本配置类简单注入了一个quene
  * @author: xiaocai
  * @time: 2022/3/17 16:05
  */

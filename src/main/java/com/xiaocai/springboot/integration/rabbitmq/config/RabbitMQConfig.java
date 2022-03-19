@@ -1,6 +1,5 @@
 package com.xiaocai.springboot.integration.rabbitmq.config;
 
-import com.xiaocai.springboot.integration.rabbitmq.entity.MQProperties;
 import org.springframework.amqp.core.DirectExchange;
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.beans.factory.annotation.Autowired;

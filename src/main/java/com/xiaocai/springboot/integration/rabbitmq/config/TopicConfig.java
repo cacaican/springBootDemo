@@ -8,7 +8,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @description:
+ * @description: 本配置类测试了topic主题发布功能，验证消息发送中的匹配功能，* 只能匹配单层，#能匹配多层
+ * 其中coreExchange 是使用api.core.*
+ * paymentExchange 使用api.payment.#
+ * 交换机与队列关联时候使用的是BindingBuilder.bing(队列quene).to（交换机）。with（匹配路径）
+ * 所以再testUser时候能够正常发送和接受
+ * 但是再testUser时候，因为交换机与队列bind的是api.core.* 无法多层匹配，所以只能发送，未被消费
  * @author: xiaocai
  * @time: 2022/3/17 16:17
  */

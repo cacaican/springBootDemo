@@ -1,6 +1,6 @@
 package com.xiaocai.springboot.integration.rabbitmq.producer.service;
 
-import com.xiaocai.springboot.integration.rabbitmq.entity.MQProperties;
+import com.xiaocai.springboot.integration.rabbitmq.config.MQProperties;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -14,4 +14,24 @@ public interface TestController {
 
     @RequestMapping("/test_userQuery")
     void test_userQuery();
+
+    @RequestMapping("/test_order")
+    void test_order();
+
+    @RequestMapping("/orderQuery")
+    void orderQuery();
+
+    @RequestMapping("/orderDetailQuery")
+    void orderDetailQuery();
+
+    void test_creditBank_type();
+
+    void test_creditBank_all();
+
+    void test_creditFinance_type();
+
+    void test_creditFinance_all();
+
+    @RequestMapping("/test_generateReports")
+    void test_generateReports();
 }

@@ -2,13 +2,14 @@ package com.xiaocai.springboot.integration.rabbitmq.producer.controller.impl;
 
 import com.xiaocai.springboot.integration.rabbitmq.producer.controller.TestController;
 import com.xiaocai.springboot.integration.rabbitmq.consumer.service.TestConsumer;
-import com.xiaocai.springboot.integration.rabbitmq.producer.service.ApiCoreSender;
-import com.xiaocai.springboot.integration.rabbitmq.producer.service.PaymentNotifySender;
-import com.xiaocai.springboot.integration.rabbitmq.producer.service.TestProducer;
+import com.xiaocai.springboot.integration.rabbitmq.producer.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @description:
@@ -47,6 +48,7 @@ public class TestControllerImpl implements TestController {
         sender.sender("支付订单号："+System.currentTimeMillis());
     }
 
+    /*--------------------------以上的是简单的发送和接受*/
     @Autowired
     private ApiCoreSender apiCoreSender;
 
@@ -61,5 +63,84 @@ public class TestControllerImpl implements TestController {
     public void test_userQuery() {
         apiCoreSender.userQuery("查询用户信息！");
     }
+
+    /*-------------------以上两个用的topic中的*匹配，user可以发送和接受，而userQuery绑定的是api.core.user.query 交换机绑定的是api.core.*只能匹配一行-------------------------*/
+
+
+    @Autowired
+    private ApiPaymentSender apiPaymentSender;
+
+    @Override
+    @RequestMapping("/test_order")
+    public void test_order() {
+        apiPaymentSender.order("订单管理！");
+    }
+
+    @Override
+    @RequestMapping("/orderQuery")
+    public void orderQuery() {
+        apiPaymentSender.orderQuery("查询订单信息！");
+    }
+
+    @Override
+    @RequestMapping("/orderDetailQuery")
+    public void orderDetailQuery() {
+        apiPaymentSender.orderDetailQuery("查询订单详情信息！");
+    }
+    /*-------------------以上三个用的topic中的#匹配，所以都能接受和发送-------------------------*/
+
+    @Autowired
+    private ApiCreditSender apiCreditSender;
+
+    @Override
+    @RequestMapping("/test_creditBank_type")
+    public void test_creditBank_type() {
+        Map<String,Object> head = new HashMap<>();
+        head.put("type", "cash");
+        apiCreditSender.creditBank(head, "银行授信(部分匹配)");
+    }
+
+    @Override
+    @RequestMapping("/test_creditBank_all")
+    public void test_creditBank_all() {
+        Map<String,Object> head = new HashMap<>();
+        head.put("type", "cash");
+        head.put("aging", "fast");
+        apiCreditSender.creditBank(head, "银行授信(全部匹配)");
+    }
+
+    @Override
+    @RequestMapping("/test_creditFinance_type")
+    public void test_creditFinance_type() {
+        Map<String,Object> head = new HashMap<>();
+        head.put("type", "cash");
+        apiCreditSender.creditFinance(head, "金融公司授信(部分匹配)");
+    }
+
+    @Override
+    @RequestMapping("/test_creditFinance_all")
+    public void test_creditFinance_all() {
+        Map<String,Object> head = new HashMap<>();
+        head.put("type", "cash");
+        head.put("aging", "fast");
+        apiCreditSender.creditFinance(head, "金融公司授信(全部匹配)");
+    }
+    /*--------------------------------------*/
+
+    @Autowired
+    private ApiReportSender apiReportSender;
+
+    @Override
+    @RequestMapping("/test_generateReports")
+    public void test_generateReports() {
+        apiReportSender.generateReports("开始生成报表！");
+    }
+    /*-上面这个测试类中，发送者发送方法中convertAndSend（交换机名称，队列名称，消息实体）
+    而该交换机是FanoutExchange,绑定了两个队列，所以两个队列都能接收到
+    -------------------------*/
+
+
+    /*此外，rabbitmq中有setCallback机制与setReturncallBack机制，可以确认消息是否发送成功*/
+
 
 }
