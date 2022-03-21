@@ -124,6 +124,16 @@
         <!-- rabbit-mq end -->
 
 
+        <!--        drools        -->
+        <!-- https://mvnrepository.com/artifact/org.kie/kie-spring -->
+        <dependency>
+            <groupId>org.kie</groupId>
+            <artifactId>kie-spring</artifactId>
+            <version>7.47.0.Final</version>
+        </dependency>
+
+        <!--drools-->
+
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
