@@ -1,7 +1,7 @@
 package com.xiaocai.springboot.reflect;
 
 import com.xiaocai.springboot.reflect.entity.Course;
-import com.xiaocai.springboot.reflect.entity.Student;
+import com.xiaocai.springboot.reflect.entity.Student2;
 import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Field;
@@ -26,7 +26,7 @@ public class Demo1 {
             Class studentClass = getClassObj("com.xiaocai.springboot.reflect.entity.Student",null);
 
             //step2 实例化对象
-            Student student = (Student) getReflectObj(studentClass);
+            Student2 student = (Student2) getReflectObj(studentClass);
 
             //step3 给属性赋值
             Field[] declaredField = studentClass.getDeclaredFields();
