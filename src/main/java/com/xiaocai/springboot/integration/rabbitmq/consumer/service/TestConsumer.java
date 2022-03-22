@@ -1,6 +1,6 @@
 package com.xiaocai.springboot.integration.rabbitmq.consumer.service;
 
-import com.xiaocai.springboot.integration.RabbitMQUtils;
+import com.xiaocai.springboot.integration.utils.RabbitMQUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;

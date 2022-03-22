@@ -1,6 +1,6 @@
-package com.xiaocai.springboot.integration.hibernate.repository;
+package com.xiaocai.springboot.integration.ssh.repository;
 
-import com.xiaocai.springboot.integration.hibernate.entity.Book;
+import com.xiaocai.springboot.integration.ssh.entity.Book;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

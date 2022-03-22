@@ -1,8 +1,8 @@
-package com.xiaocai.springboot.integration.hibernate.controller.impl;
+package com.xiaocai.springboot.integration.ssh.controller.impl;
 
-import com.xiaocai.springboot.integration.hibernate.controller.BookController;
-import com.xiaocai.springboot.integration.hibernate.entity.Book;
-import com.xiaocai.springboot.integration.hibernate.repository.BoolRepository;
+import com.xiaocai.springboot.integration.ssh.controller.BookController;
+import com.xiaocai.springboot.integration.ssh.entity.Book;
+import com.xiaocai.springboot.integration.ssh.repository.BoolRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

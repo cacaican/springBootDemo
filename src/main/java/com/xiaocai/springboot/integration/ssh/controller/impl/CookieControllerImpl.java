@@ -1,7 +1,6 @@
-package com.xiaocai.springboot.integration.hibernate.controller.impl;
+package com.xiaocai.springboot.integration.ssh.controller.impl;
 
-import com.xiaocai.springboot.integration.hibernate.controller.CookieController;
-import org.springframework.stereotype.Controller;
+import com.xiaocai.springboot.integration.ssh.controller.CookieController;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

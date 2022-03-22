@@ -1,6 +1,6 @@
-package com.xiaocai.springboot.integration.hibernate.controller;
+package com.xiaocai.springboot.integration.ssh.controller;
 
-import com.xiaocai.springboot.integration.hibernate.entity.Book;
+import com.xiaocai.springboot.integration.ssh.entity.Book;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 

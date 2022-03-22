@@ -1,8 +1,10 @@
 package com.xiaocai.springboot.integration.utils;
 
+/*
 import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
+*/
 
 /**
  * @description:
@@ -11,7 +13,7 @@ import org.kie.api.runtime.KieSession;
  */
 public class KieUtils {
 
-    private static KieContainer kieContainer;
+   /* private static KieContainer kieContainer;
 
     private static KieSession kieSession;
 
@@ -35,5 +37,5 @@ public class KieUtils {
     public static KieServices getKieServices() {
         return KieServices.Factory.get();
     }
-
+*/
 }

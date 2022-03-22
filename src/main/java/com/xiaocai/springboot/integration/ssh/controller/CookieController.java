@@ -1,7 +1,6 @@
-package com.xiaocai.springboot.integration.hibernate.controller;
+package com.xiaocai.springboot.integration.ssh.controller;
 
 import org.springframework.web.bind.annotation.CookieValue;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

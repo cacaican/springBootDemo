@@ -101,5 +101,13 @@ redis:
     sentinelHostAndPorts:
 
 # 自定义reids配置------------------------------------------------
+#mybatis配置
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  # 配置实体地址
+  type-aliases-package: com.xiaocai.springboot.integration.ssm.entity
+  # 配置Mapper.xml地址
+  mapper-locations: classpath:/mapper/*.xml
 
 

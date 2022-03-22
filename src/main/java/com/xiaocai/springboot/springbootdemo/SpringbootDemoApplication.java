@@ -1,5 +1,6 @@
 package com.xiaocai.springboot.springbootdemo;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -12,7 +13,9 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 @ComponentScan("com.xiaocai.springboot.login")
 //@ComponentScan("com.xiaocai.springboot.integration")
 @ComponentScan("com.xiaocai.springboot.integration.cache")
-@ComponentScan("com.xiaocai.springboot.integration.hibernate")
+@ComponentScan("com.xiaocai.springboot.integration.ssh")
+@ComponentScan("com.xiaocai.springboot.integration.ssm")
+@MapperScan("com.xiaocai.springboot.integration.ssm")
 @ComponentScan("com.xiaocai.springboot.integration.rabbitmq")
 @EntityScan(basePackages = "com.xiaocai.springboot.integration")//设置hiernate的entity扫包路径，找包中@entity和@table的class
 //数据库连接信息

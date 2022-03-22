@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaocai.springboot.integration.ssm.mapper.CarMapper">
+    <insert id="createCar">
+        INSERT INTO car(id, brand, color, seats, price, createDate)
+        VALUES (#{id}, #{brand}, #{color}, #{seats}, #{price}, #{createDate})
+    </insert>
+
+    <select id="getAllCar" resultType="com.xiaocai.springboot.integration.ssm.entity.Car">
+        select *
+        from car
+    </select>
+
+    <select id="getCarById" resultType="com.xiaocai.springboot.integration.ssm.entity.Car" parameterType="int">
+        select *
+        from car
+        where id = #{id}
+    </select>
+
+    <!--有以下几个注意点，
+    1.if test中间的and 需要小写 ，大写会报错
+    2.模糊查询有两种方式， 第一是like #{xxx}  ，然后手动传参时候在参数前后加%,此时若参数无%，会变成普通查询
+    2. 第二种是like '%${xxxx}}%'
+    3.如果入参是Map类型，则不需要额外定义parameterType
+    -->
+    <select id="getCar" resultType="com.xiaocai.springboot.integration.ssm.entity.Car" >
+        select * from car where 1=1
+       <if test="id != null ">
+           and  id =#{id}
+        </if>
+        <if test="brand != null and brand != ''">
+            and  brand like '%${brand}%'
+        </if>
+        <if test="color != null and color != ''">
+            and  color like '%${color}%'
+        </if>
+        <if test="seats != null ">
+            and  seats =#{seats}
+        </if>
+        <if test="price != null and price != ''">
+            and  price =#{price}
+        </if>
+        <if test="createDate != null and createDate != ''">
+            and  createDate =#{createDate}
+        </if>
+    </select>
+    <update id=""></update>
+
+    <!--<resultMap id="userMap" type="User">
+        <id property="id" column="id"></id>
+        <result property="username" column="username"></result>
+        <result property="password" column="password"></result>
+        <result property="address" column="address"></result>
+        <result property="email" column="email"></result>
+
+        <collection property="roles" ofType="Role">
+            <id property="id" column="role_id"></id>
+            <result property="name" column="role_name"></result>
+        </collection>
+    </resultMap>
+    &lt;!&ndash; 一对多：嵌套 Select 查询 &ndash;&gt;
+    <resultMap id="menusMap" type="Menu">
+        <id property="id" column="id"></id>
+        <result property="name" column="name"></result>
+        <result property="url" column="url"></result>
+        <result property="m_desc" column="m_desc"></result>
+        <result property="parent_id" column="parent_id"></result>
+        &lt;!&ndash; ofType="Menu" 对应返回数据的类型&ndash;&gt;
+        &lt;!&ndash;select="getMenus" 指定了SELECT语句的id&ndash;&gt;
+        &lt;!&ndash;column="{parent_id=id}" 则是列的别名，参数的表达式&ndash;&gt;
+        <collection property="childMenu" ofType="Menu" select="getMenus" column="{parent_id=id}"></collection>
+    </resultMap>-->
+
+</mapper>

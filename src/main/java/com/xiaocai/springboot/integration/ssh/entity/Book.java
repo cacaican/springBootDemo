@@ -1,4 +1,4 @@
-package com.xiaocai.springboot.integration.hibernate.entity;
+package com.xiaocai.springboot.integration.ssh.entity;
 
 import lombok.Data;
 

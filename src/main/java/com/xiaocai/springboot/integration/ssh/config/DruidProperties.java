@@ -1,4 +1,4 @@
-package com.xiaocai.springboot.integration.hibernate.config;
+package com.xiaocai.springboot.integration.ssh.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.util.JdbcConstants;
