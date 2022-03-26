@@ -1,7 +1,7 @@
-package com.xiaocai.springboot.invoke.staticd;
+package com.xiaocai.springboot.javase.invoke.staticd;
 
-import com.xiaocai.springboot.invoke.entity.People;
-import com.xiaocai.springboot.invoke.entity.Student;
+import com.xiaocai.springboot.javase.invoke.entity.People;
+import com.xiaocai.springboot.javase.invoke.entity.Student;
 
 /**
  * @description: 静态代理，所谓静态代理，就是引入被代理对象，在调用代理方法前加入自己的操作

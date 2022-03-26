@@ -1,5 +1,6 @@
-package com.xiaocai.springboot.reflect.entity;
+package com.xiaocai.springboot.javase.invoke.entity;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
@@ -8,7 +9,7 @@ import java.util.Map;
  * @author: xiaocai
  * @time: 2022/3/21 9:10
  */
-public class Student2 {
+public class Student  implements People , Serializable {
 
     private String name;
     private int age;
@@ -47,7 +48,27 @@ public class Student2 {
         this.map = map;
     }
 
-    public String exam(String name ,Course course) {
+    public String exam(String name , Course course) {
         return String.format("%s 的 %s 课程考试成绩为%s",name,course.getName(),course.getScore());
+    }
+
+    @Override
+    public void eat() {
+        System.out.println("学生吃学生餐");
+    }
+
+    @Override
+    public void shit() {
+        System.out.println("学生一般下课上厕所");
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", courses=" + courses +
+                ", map=" + map +
+                '}';
     }
 }

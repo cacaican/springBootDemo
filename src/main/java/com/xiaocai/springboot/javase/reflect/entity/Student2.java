@@ -1,4 +1,4 @@
-package com.xiaocai.springboot.invoke.entity;
+package com.xiaocai.springboot.javase.reflect.entity;
 
 import java.util.List;
 import java.util.Map;
@@ -8,7 +8,7 @@ import java.util.Map;
  * @author: xiaocai
  * @time: 2022/3/21 9:10
  */
-public class Student  implements People{
+public class Student2 {
 
     private String name;
     private int age;
@@ -47,17 +47,7 @@ public class Student  implements People{
         this.map = map;
     }
 
-    public String exam(String name , Course course) {
+    public String exam(String name ,Course course) {
         return String.format("%s 的 %s 课程考试成绩为%s",name,course.getName(),course.getScore());
-    }
-
-    @Override
-    public void eat() {
-        System.out.println("学生吃学生餐");
-    }
-
-    @Override
-    public void shit() {
-        System.out.println("学生一般下课上厕所");
     }
 }

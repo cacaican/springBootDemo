@@ -1,4 +1,4 @@
-package com.xiaocai.springboot.invoke.entity;
+package com.xiaocai.springboot.javase.invoke.entity;
 
 /**
  * @description:

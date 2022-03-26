@@ -1,6 +1,6 @@
-package com.xiaocai.springboot.invoke.dynamic.cglib;
+package com.xiaocai.springboot.javase.invoke.dynamic.cglib;
 
-import com.xiaocai.springboot.invoke.entity.Student;
+import com.xiaocai.springboot.javase.invoke.entity.Student;
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;
 import org.springframework.cglib.proxy.MethodProxy;

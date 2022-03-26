@@ -26,26 +26,50 @@
     -->
     <select id="getCar" resultType="com.xiaocai.springboot.integration.ssm.entity.Car" >
         select * from car where 1=1
-       <if test="id != null ">
-           and  id =#{id}
+       <if test="condition.id != null ">
+           and  id =#{condition.id}
         </if>
-        <if test="brand != null and brand != ''">
-            and  brand like '%${brand}%'
+        <if test="condition.brand != null and condition.brand != ''">
+            and  brand like '%${condition.brand}%'
         </if>
-        <if test="color != null and color != ''">
-            and  color like '%${color}%'
+        <if test="condition.color != null and condition.color != ''">
+            and  color like '%${condition.color}%'
         </if>
-        <if test="seats != null ">
-            and  seats =#{seats}
+        <if test="condition.seats != null ">
+            and  seats =#{condition.seats}
         </if>
-        <if test="price != null and price != ''">
-            and  price =#{price}
+        <if test="condition.price != null and condition.price != ''">
+            and  price =#{condition.price}
         </if>
-        <if test="createDate != null and createDate != ''">
-            and  createDate =#{createDate}
+        <if test="condition.createDate != null and condition.createDate != ''">
+            and  createDate =#{condition.createDate}
         </if>
     </select>
     <update id=""></update>
+
+
+    <select id="getCarsByCondition" resultType="com.xiaocai.springboot.integration.ssm.entity.Car" >
+        select * from car where 1=1
+        <if test="condition.id != null ">
+            and  id =#{id}
+        </if>
+        <if test="condition.brand != null and condition.brand != ''">
+            and  brand like '%${condition.brand}%'
+        </if>
+        <if test="condition.color != null and condition.color != ''">
+            and  color like '%${condition.color}%'
+        </if>
+        <if test="condition.seats != null ">
+            and  seats =#{condition.seats}
+        </if>
+        <if test="condition.price != null and condition.price != ''">
+            and  price =#{condition.price}
+        </if>
+        <if test="condition.createDate != null and condition.createDate != ''">
+            and  createDate =#{condition.createDate}
+        </if>
+            limit #{from} , #{limit}
+    </select>
 
     <!--<resultMap id="userMap" type="User">
         <id property="id" column="id"></id>

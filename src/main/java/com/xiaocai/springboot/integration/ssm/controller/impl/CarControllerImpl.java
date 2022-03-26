@@ -40,6 +40,14 @@ public class CarControllerImpl implements CarController {
         return carMapper.getCar(condition);
     }
 
+    @Override
+    @RequestMapping("/getCarsByCondition")
+    public List getCarsByCondition(@RequestParam(name = "from" ,defaultValue = "0")int from,
+                                   @RequestParam(name = "limit" ,defaultValue = "5")int limit,
+                                   @RequestParam()Map condition) {
+        return carMapper.getCarsByCondition(from ,limit ,condition);
+    }
+
    /* @Override
     public boolean updateCar(int id, Car car) {
         return carMapper.updateCar(id,car);
@@ -61,4 +69,11 @@ public class CarControllerImpl implements CarController {
     public boolean exist(Car car) {
         return exist(car);
     }*/
+
+    @Override
+    @RequestMapping("/count")
+    public int count(Car car) {
+        System.out.println("查询总数");
+        return carMapper.count();
+    }
 }

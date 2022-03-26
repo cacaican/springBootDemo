@@ -1,4 +1,4 @@
-package com.xiaocai.springboot.reflect.entity;
+package com.xiaocai.springboot.javase.reflect.entity;
 
 /**
  * @description:

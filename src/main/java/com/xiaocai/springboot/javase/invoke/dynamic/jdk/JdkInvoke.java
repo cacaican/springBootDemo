@@ -1,7 +1,7 @@
-package com.xiaocai.springboot.invoke.dynamic.jdk;
+package com.xiaocai.springboot.javase.invoke.dynamic.jdk;
 
-import com.xiaocai.springboot.invoke.entity.People;
-import com.xiaocai.springboot.invoke.entity.Student;
+import com.xiaocai.springboot.javase.invoke.entity.People;
+import com.xiaocai.springboot.javase.invoke.entity.Student;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

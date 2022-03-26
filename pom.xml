@@ -171,6 +171,11 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.4</version>
         </dependency>
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.8.3</version>
+        </dependency>
 
         <!-- scope取值          有效范围（compile, runtime, test）
          compile         all
@@ -179,6 +184,12 @@
          test            test
          system          compile, test
          -->
+        <!--springboot项目集成quartz依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-quartz</artifactId>
+        </dependency>
+
     </dependencies>
 
 <!--    <build>

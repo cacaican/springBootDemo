@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ImportResource;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 
 @SpringBootApplication
@@ -18,6 +19,8 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 @MapperScan("com.xiaocai.springboot.integration.ssm")
 @ComponentScan("com.xiaocai.springboot.integration.rabbitmq")
 @EntityScan(basePackages = "com.xiaocai.springboot.integration")//设置hiernate的entity扫包路径，找包中@entity和@table的class
+@ComponentScan("com.xiaocai.springboot.integration.threadPool")
+@ComponentScan("com.xiaocai.springboot.integration.quartz")
 //数据库连接信息
 @ImportResource(
         /*数据库连接信息，可以使用* 做通配符*/
@@ -28,6 +31,7 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 @EnableCaching//允许启用缓存
 //主类首先开启EnableRedisHttpSession注解：支持spring-boot分布式事务
 @EnableRedisHttpSession
+@EnableAsync
 public class SpringbootDemoApplication {
 
     public static void main(String[] args) {
