@@ -1,4 +1,4 @@
-package com.xiaocai.springboot.integration.rule.drools.entity;
+package com.xiaocai.springboot.integration.rules.drools.entity;
 
 /**
  * @description:
