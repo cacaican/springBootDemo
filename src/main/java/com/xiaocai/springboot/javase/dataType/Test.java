@@ -41,7 +41,8 @@ public class Test {
         System.out.println(as == ah); //false
         System.out.println(as == aa); //false
         System.out.println(aa == ab); //true
-        System.out.println(aa == ac); //true
+        System.out.println("-------------------");
+        System.out.println(aa == ac ); //true
         System.out.println(aa == ag); //false
         System.out.println(aa == (ag.intern())); //false
         ClassLoader classLoader = ah.getClass().getClassLoader();

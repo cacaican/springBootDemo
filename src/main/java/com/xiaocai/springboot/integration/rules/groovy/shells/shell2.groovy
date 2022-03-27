@@ -1,4 +1,4 @@
-package com.xiaocai.springboot.integration.rule.groovy.shells
+package com.xiaocai.springboot.integration.rules.groovy.shells
 
 def sayHello(String name,String sex ,int age) {
     printf "你好：" + name+"性别为：" + sex+"现在你：" + age+"\n";

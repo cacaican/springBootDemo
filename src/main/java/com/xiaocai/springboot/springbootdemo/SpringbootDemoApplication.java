@@ -21,6 +21,7 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 @EntityScan(basePackages = "com.xiaocai.springboot.integration")//设置hiernate的entity扫包路径，找包中@entity和@table的class
 @ComponentScan("com.xiaocai.springboot.integration.threadPool")
 @ComponentScan("com.xiaocai.springboot.integration.quartz")
+@ComponentScan("com.xiaocai.springboot.integration.rules")
 //数据库连接信息
 @ImportResource(
         /*数据库连接信息，可以使用* 做通配符*/

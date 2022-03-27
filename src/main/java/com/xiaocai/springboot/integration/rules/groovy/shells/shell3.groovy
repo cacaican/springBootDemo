@@ -1,4 +1,4 @@
-package com.xiaocai.springboot.integration.rule.groovy.shells
+package com.xiaocai.springboot.integration.rules.groovy.shells
 
 
 def hello(String name) {

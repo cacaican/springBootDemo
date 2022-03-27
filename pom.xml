@@ -23,6 +23,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-groovy-templates</artifactId>
             <version>${springboot.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>spring-boot-starter-web</artifactId>
+                    <groupId>org.springframework.boot</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!--<dependency>
             <groupId>org.springframework.boot</groupId>
@@ -156,15 +162,16 @@
 
 
 
-        <!--        drools        -->
+        <!--        drools使用方式.md        -->
         <!-- https://mvnrepository.com/artifact/org.kie/kie-spring -->
         <dependency>
             <groupId>org.kie</groupId>
             <artifactId>kie-spring</artifactId>
-            <version>7.47.0.Final</version>
+<!--            <version>7.47.0.Final</version>-->
+            <version>7.6.0.Final</version>-->
         </dependency>
 
-        <!--drools-->
+        <!--drools使用方式.md-->
 
         <dependency>
             <groupId>org.apache.commons</groupId>

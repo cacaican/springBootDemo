@@ -16,6 +16,8 @@ public class Student  implements People , Serializable {
     private List<Course> courses;
     private Map map;
 
+
+
     public String getName() {
         return name;
     }
@@ -71,4 +73,5 @@ public class Student  implements People , Serializable {
                 ", map=" + map +
                 '}';
     }
+
 }

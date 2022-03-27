@@ -1,4 +1,4 @@
-package com.xiaocai.springboot.integration.rule.groovy;
+package com.xiaocai.springboot.integration.rules.groovy;
 
 import groovy.lang.Binding;
 import groovy.lang.GroovyClassLoader;
