@@ -22,6 +22,7 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 @ComponentScan("com.xiaocai.springboot.integration.threadPool")
 @ComponentScan("com.xiaocai.springboot.integration.quartz")
 @ComponentScan("com.xiaocai.springboot.integration.rules")
+@ComponentScan("com.xiaocai.springboot.integration.event")
 //数据库连接信息
 @ImportResource(
         /*数据库连接信息，可以使用* 做通配符*/

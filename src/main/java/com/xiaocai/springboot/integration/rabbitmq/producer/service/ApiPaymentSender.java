@@ -3,6 +3,7 @@ package com.xiaocai.springboot.integration.rabbitmq.producer.service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.AmqpTemplate;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -19,8 +20,11 @@ public class ApiPaymentSender {
     private AmqpTemplate rabbitTemplate;
 
     public void order(String msg){
+
+       //((RabbitTemplate)rabbitTemplate).setConfirmCallback(); 设置发布确认后回调
+       // ((RabbitTemplate)rabbitTemplate).setReturnsCallback(); 设置发布失败后回调
         LOGGER.info("api.payment.order send message: "+msg);
-        rabbitTemplate.convertAndSend("paymentExchange", "api.payment.order", msg);
+        ((RabbitTemplate)rabbitTemplate).convertAndSend("paymentExchange", "api.payment.order", msg);
     }
 
     public void orderQuery(String msg){
