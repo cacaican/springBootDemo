@@ -92,7 +92,6 @@ public class RedisCacheComponentImpl implements RedisCacheComponent {
 //            //todo
 //        }
 //        return set;
-
         ScanOptions scanOptions = ScanOptions.scanOptions().count(6000).match("*"+cacheName + "*").build();
         Cursor<byte[]> cursors = connection.scan(scanOptions);
         cursors.forEachRemaining(c ->
@@ -193,16 +192,12 @@ public class RedisCacheComponentImpl implements RedisCacheComponent {
             if ("0".equals(scanResult.getCursor())) {
                 break;
             }
-
             scanResult = redisService.scan(cursor, params);
             cursor = scanResult.getCursor();
             if (num > 100000) {
                 break;
             }
         }
-
         return list;
     }
-
-
 }

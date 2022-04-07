@@ -14,7 +14,10 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * @description:
+ * @description: 发布事件服务类
+ * 两种方法：
+ * 方法一，实例化ApplicationEventPublisher对象，通过ApplicationEventPublisher。publish（event）来发布事件
+ * 方法二，获取上下文，通过applicationContext.publishEvent(事件)来发布事件
  * @author: xiaocai
  * @time: 2022/3/30 9:33
  */
