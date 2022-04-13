@@ -1,6 +1,8 @@
 package com.xiaocai.springboot.javase.map;
 
 import java.util.Hashtable;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * @description:
@@ -15,5 +17,7 @@ public class HashTableDemo {
         hashtable.put("zhongkeruan","dd");
         hashtable.put(null,"dd");//允许key为空,不然报错
         System.out.println(hashtable.size());
+
+
     }
 }
