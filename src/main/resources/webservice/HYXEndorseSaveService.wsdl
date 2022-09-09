@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://service.endorseSave.class09.commonship.webServiceCenter.sinosoft.com" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax22157="http://common.dto.endorseSave.class09.commonship.webServiceCenter.sinosoft.com/xsd" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ax22156="http://dto.endorseSave.class09.commonship.webServiceCenter.sinosoft.com/xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://service.endorseSave.class09.commonship.webServiceCenter.sinosoft.com">
+    <wsdl:documentation>HYXEndorseSaveService</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema xmlns:ax22159="http://dto.endorseSave.class09.commonship.webServiceCenter.sinosoft.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://service.endorseSave.class09.commonship.webServiceCenter.sinosoft.com">
+            <xs:import namespace="http://dto.endorseSave.class09.commonship.webServiceCenter.sinosoft.com/xsd"/>
+            <xs:element name="service">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="param0" nillable="true" type="ax22156:EndorseSaveRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="serviceResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax22156:EndorseSaveResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://common.dto.endorseSave.class09.commonship.webServiceCenter.sinosoft.com/xsd">
+            <xs:complexType name="EndorseApplicantEhm">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="account" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="addressName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="age" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="appliName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="bank" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="birthday" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="chgAppliName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="chgIdentifyNumber" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="chgIdentifyType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="chgInsuredNature" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="email" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="idcardEndDate" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="idcardStartDate" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="identifyNumber" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="identifyType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="induredIdentity" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="linkerName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="mobile" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="occupationCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField1" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField2" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField3" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField4" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField5" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="postAddress" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="postCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="sex" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="EndorseCardItemKindEhm">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="billCount" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="billEndNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="billStartNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField1" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField2" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField3" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="serialNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="sumAmountBatch" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="sumPremiumBatch" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="visaCodeBatch" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="visaStatus" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="EndorseCargoSubEhm">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="brandNameSub" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="cargoSerialNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="conveyanceSub" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="flightNoSub" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="licenseNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="operateType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField1" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField2" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField3" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="planeModelSub" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="remarkSub" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="shipAgeSub" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="shipNameSub" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="siteNameSub" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="tonCountSub" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="trainNameSub" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="trainNoSub" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="voyageNoSub" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="EndorseEngageEhm">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="clauseCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="clauseName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="engageContext" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="lineNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField1" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField2" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField3" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField4" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="titleFlag" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="EndorseInsuredEhm">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="account" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="addressName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="age" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="bank" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="birthday" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="chgInsuredNature" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="chgidentifyNumber" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="chgidentifyType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="chginsuredName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="email" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="endorseInsuredAddrEhm" nillable="true" type="ax22157:EndorseInsuredAddrEhm"/>
+                    <xs:element minOccurs="0" name="idcardEndDate" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="idcardStartDate" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="identifyNumber" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="identifyType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="inValidMessage" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="insuredName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="linkerName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="mobile" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="occupationCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField1" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField2" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField3" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField4" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField5" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="postAddress" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="postCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="relation" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="serialNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="sex" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="valid" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="EndorseInsuredAddrEhm">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="addressCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="addressName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="city" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField1" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField2" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField3" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField4" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField5" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="province" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="EndorseItemKindEhm">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="adjustRate" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="amount" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="cargoCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="cargoName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="cargoSortCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="cargoSortName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="chgCargoSortCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="chgKindCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="deductibleMain" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="deductibleRateMain" nillable="true" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="endorseRiskValuatEhm" nillable="true" type="ax22157:EndorseRiskValuatEhm"/>
+                    <xs:element minOccurs="0" name="familyName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="itemDescription" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="itemMarks" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="kindCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="kindName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="modeCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="model" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="operateType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField1" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField2" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField3" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField4" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField5" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="premium" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="quantityMain" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="rate" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="unitAmount" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="unitMain" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="valueMain" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="EndorseRiskValuatEhm">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="othField1" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField2" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField3" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField4" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField5" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="riskValuatCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="riskValuatValue" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="EndorseMainEhm">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="bargainNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="blName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="blNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="carryBillNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="coefficient1" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="coefficient2" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="coefficient3" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="coefficient4" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="coefficient5" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="coefficient6" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="conveyance" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="endDate" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="endDetailName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="endSiteCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="engageFlag" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="frameNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="invoiceNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="mainPolicyNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField1" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField2" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField3" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField4" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField5" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="policyNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="preserveInfo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="reshipSiteName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="sendTime" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="shipNoteNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="startDate" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="startSiteName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="startTransportDate" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="tonCount" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="totalAmount" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="totalPremium" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="validDate" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="viaSiteName" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="EndorseRiskFactoryEhm">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="cargosorType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField1" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField2" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField3" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField4" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="othField5" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="packagType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="registry" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="serialversionuid" type="xs:long"/>
+                    <xs:element minOccurs="0" name="shipAge" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="shipName" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="shipPremium" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax22158="http://common.dto.endorseSave.class09.commonship.webServiceCenter.sinosoft.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://dto.endorseSave.class09.commonship.webServiceCenter.sinosoft.com/xsd">
+            <xs:import namespace="http://common.dto.endorseSave.class09.commonship.webServiceCenter.sinosoft.com/xsd"/>
+            <xs:complexType name="EndorseSaveRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="endorseApplicantEhm" nillable="true" type="ax22158:EndorseApplicantEhm"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="endorseCardItemKindEhm" nillable="true" type="ax22158:EndorseCardItemKindEhm"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="endorseCargoSubEhm" nillable="true" type="ax22158:EndorseCargoSubEhm"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="endorseEngageEhm" nillable="true" type="ax22158:EndorseEngageEhm"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="endorseInsuredEhmArray" nillable="true" type="ax22158:EndorseInsuredEhm"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="endorseItemKindEhm" nillable="true" type="ax22158:EndorseItemKindEhm"/>
+                    <xs:element minOccurs="0" name="endorseMainEhm" nillable="true" type="ax22158:EndorseMainEhm"/>
+                    <xs:element minOccurs="0" name="endorseRiskFactoryEhm" nillable="true" type="ax22158:EndorseRiskFactoryEhm"/>
+                    <xs:element minOccurs="0" name="requestType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="systemCode" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="EndorseSaveResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="endorflag" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="endorseNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="endorseText" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="errorMessage" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="policyNo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="requestType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="responseCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="sendTime" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="serviceRequest">
+        <wsdl:part name="parameters" element="ns:service"/>
+    </wsdl:message>
+    <wsdl:message name="serviceResponse">
+        <wsdl:part name="parameters" element="ns:serviceResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="HYXEndorseSaveServicePortType">
+        <wsdl:operation name="service">
+            <wsdl:input message="ns:serviceRequest" wsaw:Action="urn:service"/>
+            <wsdl:output message="ns:serviceResponse" wsaw:Action="urn:serviceResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="HYXEndorseSaveServiceSoap11Binding" type="ns:HYXEndorseSaveServicePortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="service">
+            <soap:operation soapAction="urn:service" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="HYXEndorseSaveServiceSoap12Binding" type="ns:HYXEndorseSaveServicePortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="service">
+            <soap12:operation soapAction="urn:service" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="HYXEndorseSaveServiceHttpBinding" type="ns:HYXEndorseSaveServicePortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="service">
+            <http:operation location="HYXEndorseSaveService/service"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="service"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="service"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="HYXEndorseSaveService">
+        <wsdl:port name="HYXEndorseSaveServiceHttpSoap11Endpoint" binding="ns:HYXEndorseSaveServiceSoap11Binding">
+            <soap:address location="http://9.1.184.83:7001//webServiceCenter/services/HYXEndorseSaveService.HYXEndorseSaveServiceHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="HYXEndorseSaveServiceHttpSoap12Endpoint" binding="ns:HYXEndorseSaveServiceSoap12Binding">
+            <soap12:address location="http://9.1.184.83:7001//webServiceCenter/services/HYXEndorseSaveService.HYXEndorseSaveServiceHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="HYXEndorseSaveServiceHttpEndpoint" binding="ns:HYXEndorseSaveServiceHttpBinding">
+            <http:address location="http://9.1.184.83:7001//webServiceCenter/services/HYXEndorseSaveService.HYXEndorseSaveServiceHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
